@@ -7,7 +7,7 @@ public class Customer {
 	private boolean hasDrivingLicense;
 	private int base;
 	
-	public CarInsurance(int age, String sex, boolean isMarried, boolean hasDrivingLicense, int base) {
+	public Customer(int age, String sex, boolean isMarried, boolean hasDrivingLicense) {
 		this.age = age;
 		this.sex = sex;
 		this.isMarried = isMarried;
