@@ -1,12 +1,11 @@
 package ec.edu.espol.workshops;
 
 public class BusinessRule {
-    
+
     public void reglaHombreJovenSoltero(Customer customer){
         if(customer.getSex().toUpperCase().equals("M") && !customer.isMarried() && (customer.getAge()<25)){
             customer.setBase(customer.getBase()+1500);
-        }
-        
+        }        
     }
 
     public void reglaMujerCasada(Customer customer){
@@ -18,6 +17,13 @@ public class BusinessRule {
     public void reglaEdad(Customer customer){
         if(customer.getAge()>=45 && customer.getAge()<65){
             customer.setBase(customer.getBase()-100);
+        }
+    }
+    
+    public static void validarPremium(Customer cliente){
+        if(cliente.getAge()>80 || !cliente.hasDrivingLicense()){
+            System.out.println("Cannot sell insurance to current customer.");
+            System.exit(-1);
         }
     }
 }
