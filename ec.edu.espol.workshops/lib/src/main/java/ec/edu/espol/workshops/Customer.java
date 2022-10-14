@@ -8,8 +8,7 @@ public class Customer {
     private int base;
 
 
-    public Customer(int age, String sex, boolean married, boolean drivingLicense, int base) {
-
+    public Customer(int age, String sex, boolean married, boolean drivingLicense) {
         this.age = age;
         this.sex = sex;
         this.married = married;
@@ -55,7 +54,7 @@ public class Customer {
     
     @Override
     public String toString() {
-    	return "The base premium's value to pay is $ " + this.base + "."
+    	return "The base premium's value to pay is $ " + this.base + ".";
     }
 
 }
