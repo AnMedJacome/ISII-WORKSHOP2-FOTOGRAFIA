@@ -52,5 +52,10 @@ public class Customer {
     public void setBase(int base) {
         this.base = base;
     }
+    
+    @Override
+    public String toString() {
+    	return "The base premium's value to pay is $ " + this.base + "."
+    }
 
 }
