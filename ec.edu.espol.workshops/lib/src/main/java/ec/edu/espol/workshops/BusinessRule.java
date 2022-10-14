@@ -22,7 +22,7 @@ public class BusinessRule {
         }
     }
     
-    public static static void checkPremium(Customer cliente){
+    public static void checkPremium(Customer cliente){
         if(cliente.getAge()>80 || !cliente.hasDrivingLicense()){
             System.out.println("Cannot sell insurance to current customer.");
             System.exit(-1);
