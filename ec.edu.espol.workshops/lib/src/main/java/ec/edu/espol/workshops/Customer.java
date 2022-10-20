@@ -1,7 +1,13 @@
 package ec.edu.espol.workshops;
 
 public class Customer {
+    /**
+     * An integer to save the customer's age.
+    */
     private int age;
+    /**
+     * A string variable to save information about the sex of the customer.
+    */
     private String sex;
     private boolean married;
     private boolean drivingLicense;
