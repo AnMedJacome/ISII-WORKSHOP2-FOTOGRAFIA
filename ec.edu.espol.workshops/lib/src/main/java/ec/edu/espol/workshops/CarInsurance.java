@@ -15,19 +15,19 @@ public class CarInsurance {
 			do {
 				System.out.println("Enter your sex(M/F): ");
 				sex = sc.nextLine();
-			} while(!(sex.toUpperCase()).equals("M") && !(sex.toUpperCase()).equals("F"));
+			} while(!("M".equals(sex.toUpperCase())) && !("F".equals(sex.toUpperCase())));
 
 			do {
 				System.out.println("Are you married or not?(Y/N): ");
 				maritalStatus = sc.nextLine();
-			} while(!(maritalStatus.toUpperCase()).equals("Y") && !(maritalStatus.toUpperCase()).equals("N"));
+			} while(!("Y".equals(maritalStatus.toUpperCase())) && !("N".equals(maritalStatus.toUpperCase())));
 
 			boolean married = (maritalStatus.toUpperCase()).equals("Y");
 
 			do {
 				System.out.println("Do you have a driver's license?(Y/N): ");
 				license = sc.nextLine();
-			}while(!license.toUpperCase().equals("Y") && !license.toUpperCase().equals("N"));
+			}while(!("Y".equals(license.toUpperCase())) && !("N".equals(license.toUpperCase())));
 
 			boolean hasLicense = license.toUpperCase().equals("Y");
 			Customer client = new Customer( Integer.parseInt(age), sex, married, hasLicense );

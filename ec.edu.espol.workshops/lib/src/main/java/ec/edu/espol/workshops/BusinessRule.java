@@ -5,13 +5,13 @@ public class BusinessRule {
 	private BusinessRule() {}
 
     public static void checkSingleYoungManRule(Customer customer){
-        if(customer.getSex().toUpperCase().equals("M") && !customer.isMarried() && (customer.getAge()<25)){
+        if(("M".equals(customer.getSex().toUpperCase())) && !customer.isMarried() && (customer.getAge()<25)){
             customer.setBase(customer.getBase()+1500);
         }        
     }
 
     public static void checkMarriedWomanRule(Customer customer){
-        if(customer.getSex().toUpperCase().equals("F") || customer.isMarried()){
+        if(("F".equals(customer.getSex().toUpperCase())) || customer.isMarried()){
             customer.setBase(customer.getBase()-200);
         }
     }
