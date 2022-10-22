@@ -30,7 +30,7 @@ public class CarInsurance {
 			}while(!license.toUpperCase().equals("Y") && !license.toUpperCase().equals("N"));
 
 			boolean hasLicense = license.toUpperCase().equals("Y");
-			Customer client = new Customer( Integer.parseInt(age), sex, married, hasLicense );
+			Customer client = new Customer(Integer.parseInt(age), sex, married, hasLicense);
 
 			BusinessRule.checkSingleYoungManRule(client);
 			BusinessRule.checkMarriedWomanRule(client);
