@@ -20,7 +20,7 @@ public class CarInsurance {
 			do {
 				System.out.println("Are you married or not?(Y/N): ");
 				maritalStatus = sc.nextLine();
-			} while(!(maritalStatus.toUpperCase()).equals("Y") && !(maritalStatus.toUpperCase()).equals("N"));
+			} while(!("Y".equals(maritalStatus.toUpperCase())) && !("N".equals(maritalStatus.toUpperCase())));
 
 			boolean married = (maritalStatus.toUpperCase()).equals("Y");
 
