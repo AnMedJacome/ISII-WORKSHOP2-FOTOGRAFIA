@@ -30,7 +30,7 @@ public class CarInsurance {
 			}while(!(StringTool.compareUpperCaseString(license, "Y")) && !(StringTool.compareUpperCaseString(license, "N")));
 
 			boolean hasLicense = StringTool.compareUpperCaseString(license, "Y");
-			Customer client = new Customer( Integer.parseInt(age), sex, married, hasLicense );
+			Customer client = new Customer(Integer.parseInt(age), sex, married, hasLicense);
 
 			BusinessRule.checkSingleYoungManRule(client);
 			BusinessRule.checkMarriedWomanRule(client);
@@ -38,7 +38,7 @@ public class CarInsurance {
 			if(BusinessRule.checkPremium(client)) {
 	            System.out.println(client.toString());
 			} else {
-                System.out.println("Cannot sell insurance to current customer.");
+              System.out.println("Cannot sell insurance to current customer.");
 			}
 
 		} catch (NumberFormatException e) {
