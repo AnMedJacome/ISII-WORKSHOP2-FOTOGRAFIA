@@ -36,13 +36,13 @@ public class CarInsurance {
 			BusinessRule.checkMarriedWomanRule(client);
 			BusinessRule.checkAgeRule(client);
 			if(BusinessRule.checkPremium(client)) {
-	            System.out.println(client.toString());
+			    System.out.println(client.toString());
 			} else {
-              System.out.println("Cannot sell insurance to current customer.");
+			    System.out.println("-1");
 			}
 
 		} catch (NumberFormatException e) {
-			e.printStackTrace();
+		    System.out.println("Insert only numbers");
 		}
 	}
 

@@ -24,6 +24,7 @@ public class BusinessRule {
   }
   
   public static boolean checkPremium(Customer cliente){
+      
     return !(cliente.getAge()>80 || !cliente.hasDrivingLicense());
   }
 }
