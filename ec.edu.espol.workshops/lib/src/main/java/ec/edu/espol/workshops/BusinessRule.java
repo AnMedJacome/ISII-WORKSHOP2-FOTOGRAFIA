@@ -20,8 +20,8 @@ public class BusinessRule {
 
     public static void checkAgeRule(Customer customer) {
         if (customer.getAge() < 0) {
-            //System.out.println("Positive numbers");
-            System.out.println("Cannot sell insurance to current customer");            
+            System.out.println("Positive numbers");
+            //System.out.println("Cannot sell insurance to current customer");            
             System.exit(-1);
         } else if (customer.getAge() >= 45 && customer.getAge() < 65) {
             customer.setBase(customer.getBase() - 100);
