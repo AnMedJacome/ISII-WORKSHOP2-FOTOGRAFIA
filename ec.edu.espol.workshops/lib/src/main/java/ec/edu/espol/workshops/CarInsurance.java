@@ -8,6 +8,7 @@ public class CarInsurance {
 		try (Scanner sc = new Scanner(System.in)) {
 			System.out.println("Car Insurance Premium\n\nEnter your age: ");
 			String age = sc.nextLine();
+			
 			String sex;
 			String maritalStatus;
 			String license;
@@ -39,6 +40,7 @@ public class CarInsurance {
 			    System.out.println(client.toString());
 			} else {
 			    System.out.println("-1");
+			    System.exit(-1);
 			}
 
 		} catch (NumberFormatException e) {
