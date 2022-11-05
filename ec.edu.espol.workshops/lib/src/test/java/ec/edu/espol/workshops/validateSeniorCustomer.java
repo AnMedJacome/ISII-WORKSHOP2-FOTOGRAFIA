@@ -9,6 +9,7 @@ public class validateSeniorCustomer {
     String sex = "M";
     boolean married = false;
     boolean hasLicense = false;
+    private String actualAnswer;
     
     //Placeholder
     Customer client = new Customer((age), sex, married, hasLicense);
@@ -27,19 +28,20 @@ public class validateSeniorCustomer {
     }
     
     
-    
     @When("Creating senior customer")
     public void insert_data_case3() {
         Customer mujerCaso3 = new Customer((age), sex, married, hasLicense);
-        //BusinessRule.checkSingleYoungManRule(mujerCaso3);
-        //BusinessRule.checkMarriedWomanRule(mujerCaso3);
-        //BusinessRule.checkAgeRule(mujerCaso3);
-        //BusinessRule.checkPremium(mujerCaso3); 
+        BusinessRule.checkSingleYoungManRule(mujerCaso3);
+        BusinessRule.checkMarriedWomanRule(mujerCaso3);
+        BusinessRule.checkAgeRule(mujerCaso3);
+        if (BusinessRule.checkPremium(mujerCaso3)) {
+            this.actualAnswer = mujerCaso3.toString();
+        }else this.actualAnswer = "You have exceeded the maximum age to receive a premium value.";
     }
     
     @Then("You have exceeded the maximum age to receive a premium value")
     public void you_have_exceeded_the_maximum_age_to_receive_a_premium_value() {
-        System.out.println("You have exceeded the maximum age to receive a premium value. ");
+        assertEquals("You have exceeded the maximum age to receive a premium value.", this.actualAnswer);
     }
     
     

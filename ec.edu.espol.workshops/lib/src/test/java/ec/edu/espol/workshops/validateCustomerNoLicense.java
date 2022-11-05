@@ -9,6 +9,7 @@ public class validateCustomerNoLicense {
     String sex = "M";
     boolean married = false;
     boolean hasLicense = false;
+    private String actualAnswer;
     
     //Placeholder
     Customer client = new Customer((age), sex, married, hasLicense);
@@ -30,15 +31,17 @@ public class validateCustomerNoLicense {
     @When("Creating customer with no license")
     public void insert_data_case4() {
         Customer hombreCaso4 = new Customer((age), sex, married, hasLicense);
-        //BusinessRule.checkSingleYoungManRule(hombreCaso4);
-        //BusinessRule.checkMarriedWomanRule(hombreCaso4);
-        //BusinessRule.checkAgeRule(hombreCaso4);
-       // BusinessRule.checkPremium(hombreCaso4);
+        BusinessRule.checkSingleYoungManRule(hombreCaso4);
+        BusinessRule.checkMarriedWomanRule(hombreCaso4);
+        BusinessRule.checkAgeRule(hombreCaso4);
+        if (BusinessRule.checkPremium(hombreCaso4)) {
+            this.actualAnswer = hombreCaso4.toString();
+        }else this.actualAnswer = "You need a driver's license to get the premium value.";
     }
     
     @Then("You need a driver license to get the premium value")
     public void customer_requires_license() {
-        System.out.println("You need a driver's license to get the premium value.");
+        assertEquals("You need a driver's license to get the premium value.", this.actualAnswer);
     }
     
     

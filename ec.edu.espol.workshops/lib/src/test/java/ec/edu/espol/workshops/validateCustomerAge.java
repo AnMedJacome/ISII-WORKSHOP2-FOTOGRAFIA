@@ -9,6 +9,7 @@ public class validateCustomerAge {
     String sex = "M";
     boolean married = false;
     boolean hasLicense = false;
+    private String actualAnswer;
     
     //Placeholder
     Customer client = new Customer((age), sex, married, hasLicense);
@@ -28,15 +29,21 @@ public class validateCustomerAge {
     @When("Creating customer")
     public void insert_data_case2() {
         Customer hombreCaso2 = new Customer((age), sex, married, hasLicense);
-        //BusinessRule.checkSingleYoungManRule(hombreCaso2);
-        //BusinessRule.checkMarriedWomanRule(hombreCaso2);
-        //BusinessRule.checkAgeRule(hombreCaso2);
-        //BusinessRule.checkPremium(hombreCaso2); 
+        try {
+            BusinessRule.checkSingleYoungManRule(hombreCaso2);
+            BusinessRule.checkMarriedWomanRule(hombreCaso2);
+            BusinessRule.checkAgeRule(hombreCaso2);
+            if (BusinessRule.checkPremium(hombreCaso2))
+                this.actualAnswer = hombreCaso2.toString();
+        } catch (NumberFormatException e) {
+            this.actualAnswer = "Inserted age is not a number.";
+        }
+        
     }
     
     @Then("Inserted age is not a number")
     public void inserted_age_is_not_a_number() {
-        System.out.println("Inserted age is not a number");
+        assertEquals("Inserted age is not a number.", this.actualAnswer);
     }
     
     

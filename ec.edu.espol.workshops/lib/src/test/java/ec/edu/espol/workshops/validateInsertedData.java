@@ -9,6 +9,7 @@ public class validateInsertedData {
     String sex = "M";
     boolean married = false;
     boolean hasLicense = false;
+    private String actualAnswer;
     
     //Placeholder
     Customer client = new Customer((age), sex, married, hasLicense);
@@ -30,15 +31,17 @@ public class validateInsertedData {
     @When("Inserting data")
     public void insert_data_case1() {
         Customer mujerCaso1 = new Customer((age), sex, married, hasLicense);
-        //BusinessRule.checkSingleYoungManRule(mujerCaso1);
-        //BusinessRule.checkMarriedWomanRule(mujerCaso1);
-        //BusinessRule.checkAgeRule(mujerCaso1);
-        //BusinessRule.checkPremium(mujerCaso1); 
+        BusinessRule.checkSingleYoungManRule(mujerCaso1);
+        BusinessRule.checkMarriedWomanRule(mujerCaso1);
+        BusinessRule.checkAgeRule(mujerCaso1);
+        if (BusinessRule.checkPremium(mujerCaso1)) {
+            this.actualAnswer = mujerCaso1.toString();
+        }else this.actualAnswer = "Client needs a driver's license to get a premium calculated.";
     }
     
     @Then("Client needs license")
     public void client_needs_license() {
-        System.out.println("Client needs a driver's license to get a premium calculated.");
+        assertEquals("Client needs a driver's license to get a premium calculated.", this.actualAnswer);
     }
     
     
