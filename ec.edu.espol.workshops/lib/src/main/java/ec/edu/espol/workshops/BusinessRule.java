@@ -30,6 +30,14 @@ public class BusinessRule {
 
     public static boolean checkPremium(Customer cliente) {
 
+        if(cliente.getAge() > 80){
+            System.out.println("You have exceeded the maximum age to receive a premium value");
+            return false;
+        }else if(!cliente.hasDrivingLicense()){
+            System.out.println("You need a driver's license to get the premium value");
+            return false;
+        }
+
         return !(cliente.getAge() > 80 || !cliente.hasDrivingLicense());
     }
 }
