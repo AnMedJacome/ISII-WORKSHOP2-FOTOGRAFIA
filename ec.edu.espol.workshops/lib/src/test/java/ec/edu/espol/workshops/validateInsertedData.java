@@ -30,10 +30,10 @@ public class validateInsertedData {
     @When("Inserting data")
     public void insert_data_case1() {
         Customer mujerCaso1 = new Customer((age), sex, married, hasLicense);
-        BusinessRule.checkSingleYoungManRule(mujerCaso1);
-        BusinessRule.checkMarriedWomanRule(mujerCaso1);
-        BusinessRule.checkAgeRule(mujerCaso1);
-        BusinessRule.checkPremium(mujerCaso1); 
+        //BusinessRule.checkSingleYoungManRule(mujerCaso1);
+        //BusinessRule.checkMarriedWomanRule(mujerCaso1);
+        //BusinessRule.checkAgeRule(mujerCaso1);
+        //BusinessRule.checkPremium(mujerCaso1); 
     }
     
     @Then("Client needs license")

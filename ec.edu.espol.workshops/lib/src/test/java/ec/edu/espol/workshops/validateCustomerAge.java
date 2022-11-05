@@ -28,10 +28,10 @@ public class validateCustomerAge {
     @When("Creating customer")
     public void insert_data_case2() {
         Customer hombreCaso2 = new Customer((age), sex, married, hasLicense);
-        BusinessRule.checkSingleYoungManRule(hombreCaso2);
-        BusinessRule.checkMarriedWomanRule(hombreCaso2);
-        BusinessRule.checkAgeRule(hombreCaso2);
-        BusinessRule.checkPremium(hombreCaso2); 
+        //BusinessRule.checkSingleYoungManRule(hombreCaso2);
+        //BusinessRule.checkMarriedWomanRule(hombreCaso2);
+        //BusinessRule.checkAgeRule(hombreCaso2);
+        //BusinessRule.checkPremium(hombreCaso2); 
     }
     
     @Then("Inserted age is not a number")

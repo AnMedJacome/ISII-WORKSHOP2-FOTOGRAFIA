@@ -31,10 +31,10 @@ public class validateSeniorCustomer {
     @When("Creating senior customer")
     public void insert_data_case3() {
         Customer mujerCaso3 = new Customer((age), sex, married, hasLicense);
-        BusinessRule.checkSingleYoungManRule(mujerCaso3);
-        BusinessRule.checkMarriedWomanRule(mujerCaso3);
-        BusinessRule.checkAgeRule(mujerCaso3);
-        BusinessRule.checkPremium(mujerCaso3); 
+        //BusinessRule.checkSingleYoungManRule(mujerCaso3);
+        //BusinessRule.checkMarriedWomanRule(mujerCaso3);
+        //BusinessRule.checkAgeRule(mujerCaso3);
+        //BusinessRule.checkPremium(mujerCaso3); 
     }
     
     @Then("You have exceeded the maximum age to receive a premium value")
