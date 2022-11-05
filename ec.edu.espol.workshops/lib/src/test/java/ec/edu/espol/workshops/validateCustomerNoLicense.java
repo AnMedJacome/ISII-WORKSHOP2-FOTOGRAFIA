@@ -30,10 +30,10 @@ public class validateCustomerNoLicense {
     @When("Creating customer with no license")
     public void insert_data_case4() {
         Customer hombreCaso4 = new Customer((age), sex, married, hasLicense);
-        BusinessRule.checkSingleYoungManRule(hombreCaso4);
-        BusinessRule.checkMarriedWomanRule(hombreCaso4);
-        BusinessRule.checkAgeRule(hombreCaso4);
-        BusinessRule.checkPremium(hombreCaso4);
+        //BusinessRule.checkSingleYoungManRule(hombreCaso4);
+        //BusinessRule.checkMarriedWomanRule(hombreCaso4);
+        //BusinessRule.checkAgeRule(hombreCaso4);
+       // BusinessRule.checkPremium(hombreCaso4);
     }
     
     @Then("You need a driver license to get the premium value")
