@@ -34,7 +34,7 @@ public class BusinessRule {
         } else if (cliente.getAge() > 80) {
             return "You have exceeded the maximum age to receive a car insurance premium value";
         } else if (!cliente.hasDrivingLicense()) {
-            return "You need a driver's license to get the premium value";
+            return "You need a driver's license to get the car insurance premium value";
         }
 
         return cliente.toString();
