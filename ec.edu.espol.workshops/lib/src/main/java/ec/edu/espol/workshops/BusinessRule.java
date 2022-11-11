@@ -28,11 +28,11 @@ public class BusinessRule {
 
     public static String checkPremium(Customer cliente) {
         if (cliente.getAge() < 0) {
-            System.out.println("Positive numbers only");
+            return "Positive numbers only";
         } else if (cliente.getAge() > 0 && cliente.getAge() < 18) {
             return "You are underage to get a Premium Car Insurance";
         } else if (cliente.getAge() > 80) {
-            return "You have exceeded the maximum age to receive a premium value";
+            return "You have exceeded the maximum age to receive a car insurance premium value";
         } else if (!cliente.hasDrivingLicense()) {
             return "You need a driver's license to get the premium value";
         }
