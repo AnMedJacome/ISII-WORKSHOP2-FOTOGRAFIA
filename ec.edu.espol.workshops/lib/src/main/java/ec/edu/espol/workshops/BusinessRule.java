@@ -28,16 +28,16 @@ public class BusinessRule {
         }
     }
 
-    public static boolean checkPremium(Customer cliente) {
-
-        if(cliente.getAge() > 80){
-            System.out.println("You have exceeded the maximum age to receive a premium value");
-            return false;
-        }else if(!cliente.hasDrivingLicense()){
-            System.out.println("You need a driver's license to get the premium value");
-            return false;
+    public static String checkPremium(Customer cliente) {
+        
+        if (cliente.getAge() > 0 && cliente.getAge() < 18) {
+            return "You are underage to get a Premium Car Insurance";
+        } else if (cliente.getAge() > 80) {
+            return "You have exceeded the maximum age to receive a premium value";
+        } else if (!cliente.hasDrivingLicense()) {
+            return "You need a driver's license to get the premium value";
         }
 
-        return !(cliente.getAge() > 80 || !cliente.hasDrivingLicense());
+        return cliente.toString();
     }
 }

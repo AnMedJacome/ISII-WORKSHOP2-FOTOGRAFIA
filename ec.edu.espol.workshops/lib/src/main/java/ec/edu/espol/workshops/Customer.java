@@ -95,7 +95,7 @@ public class Customer {
     
     @Override
     public String toString() {
-    	return "The base premium's value to pay is $ " + this.base + ".";
+    	return "Your car insurance premium value is $" + this.base + ".";
     }
 
 }

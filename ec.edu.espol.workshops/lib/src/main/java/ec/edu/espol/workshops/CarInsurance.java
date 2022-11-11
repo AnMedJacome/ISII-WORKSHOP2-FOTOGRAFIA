@@ -12,6 +12,7 @@ public class CarInsurance {
 			String sex;
 			String maritalStatus;
 			String license;
+			String result;
 
 			do {
 				System.out.println("Enter your sex(M/F): ");
@@ -36,12 +37,8 @@ public class CarInsurance {
 			BusinessRule.checkSingleYoungManRule(client);
 			BusinessRule.checkMarriedWomanRule(client);
 			BusinessRule.checkAgeRule(client);
-			if(BusinessRule.checkPremium(client)) {
-			    System.out.println(client.toString());
-			} else {
-			    System.out.println("-1");
-			    System.exit(-1);
-			}
+			result = BusinessRule.checkPremium(client);
+			System.out.println(result);
 
 		} catch (NumberFormatException e) {
 		    System.out.println("Insert only numbers");

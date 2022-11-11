@@ -33,8 +33,7 @@ public class validateCustomerAge {
             BusinessRule.checkSingleYoungManRule(hombreCaso2);
             BusinessRule.checkMarriedWomanRule(hombreCaso2);
             BusinessRule.checkAgeRule(hombreCaso2);
-            if (BusinessRule.checkPremium(hombreCaso2))
-                this.actualAnswer = hombreCaso2.toString();
+            this.actualAnswer = BusinessRule.checkPremium(hombreCaso2);
         } catch (NumberFormatException e) {
             this.actualAnswer = "Inserted age is not a number.";
         }
