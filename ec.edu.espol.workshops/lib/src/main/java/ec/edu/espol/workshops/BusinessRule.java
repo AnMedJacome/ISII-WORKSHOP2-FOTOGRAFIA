@@ -20,24 +20,23 @@ public class BusinessRule {
 
     public static void checkAgeRule(Customer customer) {
         if (customer.getAge() < 0) {
-            System.out.println("Positive numbers");
-            //System.out.println("Cannot sell insurance to current customer");            
             System.exit(-1);
         } else if (customer.getAge() >= 45 && customer.getAge() < 65) {
             customer.setBase(customer.getBase() - 100);
         }
     }
 
-    public static boolean checkPremium(Customer cliente) {
-
-        if(cliente.getAge() > 80){
-            System.out.println("You have exceeded the maximum age to receive a premium value");
-            return false;
-        }else if(!cliente.hasDrivingLicense()){
-            System.out.println("You need a driver's license to get the premium value");
-            return false;
+    public static String checkPremium(Customer cliente) {
+        if (cliente.getAge() < 0) {
+            return "Positive numbers only";
+        } else if (cliente.getAge() > 0 && cliente.getAge() < 18) {
+            return "You are underage to get a Premium Car Insurance";
+        } else if (cliente.getAge() > 80) {
+            return "You have exceeded the maximum age to receive a car insurance premium value";
+        } else if (!cliente.hasDrivingLicense()) {
+            return "You need a driver's license to get the car insurance premium value";
         }
 
-        return !(cliente.getAge() > 80 || !cliente.hasDrivingLicense());
+        return cliente.toString();
     }
 }

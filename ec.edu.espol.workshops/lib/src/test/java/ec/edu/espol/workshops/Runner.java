@@ -6,6 +6,8 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         plugin = {"pretty","html: build/reports/cucumber-report.html"},
-        monochrome = true)
+        monochrome = true, 
+        features = {"src/test/resources/ec/edu/espol/workshops"},
+        publish = true)
 public class Runner {
 }

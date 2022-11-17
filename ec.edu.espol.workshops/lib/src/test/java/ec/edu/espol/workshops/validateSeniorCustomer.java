@@ -34,9 +34,7 @@ public class validateSeniorCustomer {
         BusinessRule.checkSingleYoungManRule(mujerCaso3);
         BusinessRule.checkMarriedWomanRule(mujerCaso3);
         BusinessRule.checkAgeRule(mujerCaso3);
-        if (BusinessRule.checkPremium(mujerCaso3)) {
-            this.actualAnswer = mujerCaso3.toString();
-        }else this.actualAnswer = "You have exceeded the maximum age to receive a premium value.";
+        this.actualAnswer = BusinessRule.checkPremium(mujerCaso3);
     }
     
     @Then("You have exceeded the maximum age to receive a premium value")

@@ -34,9 +34,7 @@ public class validateInsertedData {
         BusinessRule.checkSingleYoungManRule(mujerCaso1);
         BusinessRule.checkMarriedWomanRule(mujerCaso1);
         BusinessRule.checkAgeRule(mujerCaso1);
-        if (BusinessRule.checkPremium(mujerCaso1)) {
-            this.actualAnswer = mujerCaso1.toString();
-        }else this.actualAnswer = "Client needs a driver's license to get a premium calculated.";
+        this.actualAnswer = BusinessRule.checkPremium(mujerCaso1);
     }
     
     @Then("Client needs license")

@@ -34,9 +34,7 @@ public class validateCustomerNoLicense {
         BusinessRule.checkSingleYoungManRule(hombreCaso4);
         BusinessRule.checkMarriedWomanRule(hombreCaso4);
         BusinessRule.checkAgeRule(hombreCaso4);
-        if (BusinessRule.checkPremium(hombreCaso4)) {
-            this.actualAnswer = hombreCaso4.toString();
-        }else this.actualAnswer = "You need a driver's license to get the premium value.";
+        this.actualAnswer = BusinessRule.checkPremium(hombreCaso4);
     }
     
     @Then("You need a driver license to get the premium value")
