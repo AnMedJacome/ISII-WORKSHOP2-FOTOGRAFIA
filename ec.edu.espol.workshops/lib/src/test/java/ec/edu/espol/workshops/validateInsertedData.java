@@ -18,7 +18,7 @@ public class validateInsertedData {
     
     @Given("Is a woman, {int} years old, is not married and does not have a driver license")
     public void is_a_woman_years_old_is_not_married_and_does_not_have_a_driver_license(Integer int1) {
-        client.setSex("F");
+        client.setGender("Female");
         sex = "F";
         client.setAge(int1);
         age = int1;

@@ -16,7 +16,7 @@ public class validateCustomerAge {
       
     @Given("{int} years old, is not married, is a man and has a driver license")
     public void years_old_is_not_married_is_a_man_and_has_a_driver_license(Integer int1) {
-        client.setSex("M");
+        client.setGender("Male");
         sex = "M";
         client.setAge(int1);
         age = int1;

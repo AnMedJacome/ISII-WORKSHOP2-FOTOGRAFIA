@@ -10,9 +10,9 @@ public class Customer {
     */
     private int age;
     /**
-     * A string variable to save information about the sex of the customer.
+     * A string variable to save information about the gender of the customer.
     */
-    private String sex;
+    private String gender;
     /**
      * A boolean variable to save information 
      * about the marital status of the customer.
@@ -31,13 +31,13 @@ public class Customer {
     /**
      * Constructor of the Customer Class
      * @param age
-     * @param sex
+     * @param gender
      * @param married
      * @param drivingLicense
      */
-    public Customer(int age, String sex, boolean married, boolean drivingLicense) {
+    public Customer(int age, String gender, boolean married, boolean drivingLicense) {
         this.age = age;
-        this.sex = sex;
+        this.gender = gender;
         this.married = married;
         this.drivingLicense = drivingLicense;
         this.base = 500;
@@ -59,12 +59,12 @@ public class Customer {
         this.age = age;
     }
     
-    public String getSex() {
-        return sex;
+    public String getGender() {
+        return gender;
     }
     
-    public void setSex(String sex) {
-        this.sex = sex;
+    public void setGender(String gender) {
+        this.gender = gender;
     }    
 
     public boolean isMarried() {

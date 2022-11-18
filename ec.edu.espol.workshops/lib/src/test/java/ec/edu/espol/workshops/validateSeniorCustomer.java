@@ -17,7 +17,7 @@ public class validateSeniorCustomer {
 // FEATURE 3
     @Given("Customer is a married, {int} year old woman and has a driver license.")
     public void customer_is_a_married_year_old_woman_and_has_a_driver_license(Integer int1) {
-        client.setSex("F");
+        client.setGender("Female");
         sex = "F";
         client.setAge(int1);
         age = int1;

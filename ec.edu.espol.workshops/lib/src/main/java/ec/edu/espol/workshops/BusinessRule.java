@@ -6,14 +6,14 @@ public class BusinessRule {
     }
 
     public static void checkSingleYoungManRule(Customer customer) {
-        if (StringTool.compareUpperCaseString(customer.getSex(), "Male") && !customer.isMarried()
+        if (StringTool.compareUpperCaseString(customer.getGender(), "Male") && !customer.isMarried()
                 && (customer.getAge() < 25)) {
             customer.setBase(customer.getBase() + 1500);
         }
     }
 
     public static void checkMarriedWomanRule(Customer customer) {
-        if (StringTool.compareUpperCaseString(customer.getSex(), "Female") || customer.isMarried()) {
+        if (StringTool.compareUpperCaseString(customer.getGender(), "Female") || customer.isMarried()) {
             customer.setBase(customer.getBase() - 200);
         }
     }
