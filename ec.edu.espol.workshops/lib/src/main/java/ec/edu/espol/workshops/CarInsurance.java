@@ -9,15 +9,18 @@ public class CarInsurance {
 			System.out.println("Car Insurance Premium\n\nEnter your age: ");
 			String age = sc.nextLine();
 			
-			String sex;
+			String genderOption;
+			String gender = "";
 			String maritalStatus;
 			String license;
 			String result;
 
+			String genderMessage = "Choose your gender inserting the respective number: \n1. Male\n2. Female\n3. Other\n4. Unspecified\n\nYour option: ";
+
 			do {
-				System.out.println("Enter your sex(M/F): ");
-				sex = sc.nextLine();
-			} while(!(StringTool.compareUpperCaseString(sex, "M")) && !(StringTool.compareUpperCaseString(sex, "F")));
+				System.out.println(genderMessage);
+				genderOption = sc.nextLine();
+			} while(!StringTool.validateGenderOption(gender,genderOption));
 
 			do {
 				System.out.println("Are you married or not?(Y/N): ");
@@ -32,7 +35,7 @@ public class CarInsurance {
 			}while(!(StringTool.compareUpperCaseString(license, "Y")) && !(StringTool.compareUpperCaseString(license, "N")));
 
 			boolean hasLicense = StringTool.compareUpperCaseString(license, "Y");
-			Customer client = new Customer(Integer.parseInt(age), sex, married, hasLicense);
+			Customer client = new Customer(Integer.parseInt(age), gender, married, hasLicense);
 
 			BusinessRule.checkSingleYoungManRule(client);
 			BusinessRule.checkMarriedWomanRule(client);

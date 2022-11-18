@@ -6,14 +6,14 @@ public class BusinessRule {
     }
 
     public static void checkSingleYoungManRule(Customer customer) {
-        if (StringTool.compareUpperCaseString(customer.getSex(), "M") && !customer.isMarried()
+        if (StringTool.compareUpperCaseString(customer.getSex(), "Male") && !customer.isMarried()
                 && (customer.getAge() < 25)) {
             customer.setBase(customer.getBase() + 1500);
         }
     }
 
     public static void checkMarriedWomanRule(Customer customer) {
-        if (StringTool.compareUpperCaseString(customer.getSex(), "F") || customer.isMarried()) {
+        if (StringTool.compareUpperCaseString(customer.getSex(), "Female") || customer.isMarried()) {
             customer.setBase(customer.getBase() - 200);
         }
     }
@@ -30,9 +30,9 @@ public class BusinessRule {
         if (cliente.getAge() < 0) {
             return "Positive numbers only";
         } else if (cliente.getAge() > 0 && cliente.getAge() < 18) {
-            return "You are underage to get a Premium Car Insurance";
+            return "You are underage (less than 18 years old) to get a Premium Car Insurance.";
         } else if (cliente.getAge() > 80) {
-            return "You have exceeded the maximum age to receive a car insurance premium value";
+            return "You have exceeded the maximum age (80 years old) to receive a car insurance premium value.";
         } else if (!cliente.hasDrivingLicense()) {
             return "You need a driver's license to get the car insurance premium value";
         }
