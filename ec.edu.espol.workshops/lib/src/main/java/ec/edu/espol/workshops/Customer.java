@@ -6,6 +6,10 @@ package ec.edu.espol.workshops;
 */
 public class Customer {
     /**
+     * An integer which refers the identification of the customer
+     */
+    private int id;
+    /**
      * An integer to save the customer's age.
     */
     private int age;
@@ -30,6 +34,24 @@ public class Customer {
 
     /**
      * Constructor of the Customer Class
+     * @param id
+     * @param age
+     * @param gender
+     * @param married
+     * @param drivingLicense
+     */
+    public Customer(int id, int age, String gender, boolean married, boolean drivingLicense) {
+        this.id = id;
+        this.age = age;
+        this.gender = gender;
+        this.married = married;
+        this.drivingLicense = drivingLicense;
+        this.base = 500;
+    }
+
+
+    /**
+     * Constructor of the Customer Class
      * @param age
      * @param gender
      * @param married
@@ -41,6 +63,18 @@ public class Customer {
         this.married = married;
         this.drivingLicense = drivingLicense;
         this.base = 500;
+    }
+    
+    /**
+     * 
+     * @return ID of the customer 
+     */
+    public int getId() {
+        return id;
+    }
+    
+    public void setId(int id) {
+        this.id = id;
     }
 
     /**
