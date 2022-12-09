@@ -40,7 +40,7 @@ public class Customer {
         this.sex = sex;
         this.married = married;
         this.drivingLicense = drivingLicense;
-        this.base = 500;
+        this.base = 600;
     }
 
     /**
