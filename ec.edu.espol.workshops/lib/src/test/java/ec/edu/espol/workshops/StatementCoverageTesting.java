@@ -12,7 +12,7 @@ class StatementCoverageTesting {
         BusinessRule.checkSingleYoungManRule(customer);
         BusinessRule.checkMarriedWomanRule(customer);
         BusinessRule.checkAgeRule(customer);
-        assertEquals(customer.toString(), "The base premium's value to pay is $ 1900.", "String should be equal");
+        assertEquals(customer.toString(), "The base premium's value to pay is $ 300.", "String should be equal");
     }
 
 
