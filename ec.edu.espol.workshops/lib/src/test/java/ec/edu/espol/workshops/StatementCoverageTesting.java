@@ -22,11 +22,8 @@ class StatementCoverageTesting {
         BusinessRule.checkSingleYoungManRule(customer);
         BusinessRule.checkMarriedWomanRule(customer);
         BusinessRule.checkAgeRule(customer);
-        if (BusinessRule.checkPremium(customer)) {
-            assertEquals(customer.toString(), "The base premium's value to pay is $ 300.", "String should be equal");
-        } else {
-            assertEquals(customer.toString(), "-1", "String should be equal");
-        }
+        String result = (BusinessRule.checkPremium(customer)) ? "" : "-1";
+        assertEquals(result, "-1", "String should be equal");
     }
 
 
@@ -46,12 +43,8 @@ class StatementCoverageTesting {
         String age = "testing";
         String result = "";
         try {
-            int customerAge = Integer.parseInt(age);
-            Customer customer = new Customer(customerAge, "M", true, true);
-            BusinessRule.checkSingleYoungManRule(customer);
-            BusinessRule.checkMarriedWomanRule(customer);
-            BusinessRule.checkAgeRule(customer);
-            result = customer.toString();
+            int ageTmp = Integer.parseInt(age);
+            result = ""+ageTmp;
         } catch(NumberFormatException e) {
             result = "Insert only numbers";
         }
@@ -65,12 +58,7 @@ class StatementCoverageTesting {
         BusinessRule.checkSingleYoungManRule(customer);
         BusinessRule.checkMarriedWomanRule(customer);
         BusinessRule.checkAgeRule(customer);
-        String result = "";
-        if (BusinessRule.checkPremium(customer)) {
-            result = customer.toString();
-        } else {
-            result = "-1";
-        }
+        String result = (BusinessRule.checkPremium(customer)) ? customer.toString() : "-1";
         assertEquals(result, "-1", "String should be equal");
     }
 }
